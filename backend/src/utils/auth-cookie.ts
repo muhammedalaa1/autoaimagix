@@ -1,5 +1,5 @@
 import type { CookieOptions, Response } from "express";
-import { env, isProduction } from "../config/env.js";
+import { env, isProduction } from "../config/env";
 
 export const AUTH_COOKIE_NAME = "access_token";
 

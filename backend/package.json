@@ -2,11 +2,11 @@
   "name": "autoaimagix-backend",
   "version": "1.0.0",
   "description": "Notes API with cookie-based JWT auth, roles, and a weather proxy",
-  "main": "dist/server.js",
+  "main": "dist/src/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/server.js",
+    "start": "node dist/src/server.js",
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

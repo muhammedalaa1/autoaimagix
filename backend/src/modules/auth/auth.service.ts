@@ -1,9 +1,9 @@
 import { eq } from "drizzle-orm";
-import { db } from "../../db/index.js";
-import { users, type User } from "../../db/schema.js";
-import { AppError } from "../../utils/app-error.js";
-import { hashPassword, verifyPassword } from "../../utils/password.js";
-import type { LoginInput, RegisterInput } from "./auth.schema.js";
+import { db } from "../../db/index";
+import { users, type User } from "../../db/schema";
+import { AppError } from "../../utils/app-error";
+import { hashPassword, verifyPassword } from "../../utils/password";
+import type { LoginInput, RegisterInput } from "./auth.schema";
 
 /** Never expose the password hash outside the service layer. */
 export function toPublicUser({ passwordHash: _passwordHash, ...user }: User) {

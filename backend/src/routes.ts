@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { authRouter } from "./modules/auth/auth.routes.js";
-import { notesRouter } from "./modules/notes/notes.routes.js";
-import { usersRouter } from "./modules/users/users.routes.js";
-import { weatherRouter } from "./modules/weather/weather.routes.js";
+import { authRouter } from "./modules/auth/auth.routes";
+import { notesRouter } from "./modules/notes/notes.routes";
+import { usersRouter } from "./modules/users/users.routes";
+import { weatherRouter } from "./modules/weather/weather.routes";
 
 export const apiRouter = Router();
 

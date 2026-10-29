@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import { weatherQuerySchema } from "./weather.schema.js";
-import * as weatherService from "./weather.service.js";
+import { weatherQuerySchema } from "./weather.schema";
+import * as weatherService from "./weather.service";
 
 export async function getCurrent(req: Request, res: Response) {
   const query = weatherQuerySchema.parse(req.query);

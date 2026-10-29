@@ -1,6 +1,6 @@
-import { env } from "../../config/env.js";
-import { AppError } from "../../utils/app-error.js";
-import { weatherApiErrorSchema, weatherApiResponseSchema, type WeatherQuery } from "./weather.schema.js";
+import { env } from "../../config/env";
+import { AppError } from "../../utils/app-error";
+import { weatherApiErrorSchema, weatherApiResponseSchema, type WeatherQuery } from "./weather.schema";
 
 const WEATHER_API_URL = "https://api.weatherapi.com/v1/current.json";
 const TIMEOUT_MS = 5_000;

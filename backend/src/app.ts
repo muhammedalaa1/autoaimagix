@@ -3,11 +3,11 @@ import cors from "cors";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import { env, isProduction } from "./config/env.js";
-import { errorHandler, notFoundHandler } from "./middlewares/error-handler.js";
-import { apiLimiter } from "./middlewares/rate-limit.js";
-import { verifyOrigin } from "./middlewares/verify-origin.js";
-import { apiRouter } from "./routes.js";
+import { env, isProduction } from "./config/env";
+import { errorHandler, notFoundHandler } from "./middlewares/error-handler";
+import { apiLimiter } from "./middlewares/rate-limit";
+import { verifyOrigin } from "./middlewares/verify-origin";
+import { apiRouter } from "./routes";
 
 export function createApp() {
   const app = express();

@@ -1,12 +1,12 @@
 import type { Request, Response } from "express";
-import { getAuthUser } from "../../middlewares/authenticate.js";
+import { getAuthUser } from "../../middlewares/authenticate";
 import {
   createNoteSchema,
   listNotesQuerySchema,
   noteIdParamsSchema,
   updateNoteSchema,
-} from "./notes.schema.js";
-import * as notesService from "./notes.service.js";
+} from "./notes.schema";
+import * as notesService from "./notes.service";
 
 export async function list(req: Request, res: Response) {
   const query = listNotesQuerySchema.parse(req.query);

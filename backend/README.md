@@ -17,6 +17,14 @@ npm run dev                 # http://localhost:4000
 
 Production: `npm run build && npm start`.
 
+### Deploying to Vercel
+
+Set the project's **Root Directory** to `backend`. `vercel.json` rewrites every request to `api/index.ts`, which default-exports the Express app as a serverless function. `src/server.ts` (with `app.listen`) is used only for local and non-serverless runs.
+
+In the project settings, add the env vars from `.env.example`, but **don't add `NODE_ENV`**: Vercel sets it, and setting it yourself skips devDependencies during the build. Also set `TRUST_PROXY=1`, and set `CORS_ORIGINS` to the deployed frontend URL.
+
+Rate-limit counters are kept in memory per function instance. Use a shared store (e.g. Redis/Upstash) for strict limits across instances.
+
 ### Environment variables
 
 See [`.env.example`](./.env.example). All variables are validated with Zod at startup. If any are missing or invalid, the server refuses to boot, and no secret has a hard-coded fallback.
@@ -47,6 +55,8 @@ See [`.env.example`](./.env.example). All variables are validated with Zod at st
 ## Project structure
 
 ```
+api/index.ts                 # Vercel serverless entry (default-exports the app)
+vercel.json                  # rewrites all routes to /api
 src/
 ├── config/env.ts            # Zod-validated environment
 ├── db/                      # Drizzle client, schema, admin seed
@@ -60,7 +70,7 @@ src/
 ├── utils/                   # AppError, jwt, password hashing, auth cookie
 ├── routes.ts                # mounts all module routers under /api
 ├── app.ts                   # Express app factory
-└── server.ts                # entry point
+└── server.ts                # local entry point (app.listen)
 ```
 
 Each module has the same layers. **Routes** wire up middleware, **controllers** validate input with Zod and shape the HTTP response, and **services** hold business logic and DB access.

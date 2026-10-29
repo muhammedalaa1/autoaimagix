@@ -1,9 +1,9 @@
 import { and, desc, eq, type SQL } from "drizzle-orm";
-import { db } from "../../db/index.js";
-import { notes } from "../../db/schema.js";
-import type { AuthUser } from "../../types/express.js";
-import { AppError } from "../../utils/app-error.js";
-import type { CreateNoteInput, ListNotesQuery, UpdateNoteInput } from "./notes.schema.js";
+import { db } from "../../db/index";
+import { notes } from "../../db/schema";
+import type { AuthUser } from "../../types/express";
+import { AppError } from "../../utils/app-error";
+import type { CreateNoteInput, ListNotesQuery, UpdateNoteInput } from "./notes.schema";
 
 /*
  * Authorization rules

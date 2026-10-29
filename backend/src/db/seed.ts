@@ -5,10 +5,10 @@
  */
 import { z } from "zod";
 import { eq } from "drizzle-orm";
-import { db } from "./index.js";
-import { users } from "./schema.js";
-import { hashPassword } from "../utils/password.js";
-import { passwordSchema } from "../modules/auth/auth.schema.js";
+import { db } from "./index";
+import { users } from "./schema";
+import { hashPassword } from "../utils/password";
+import { passwordSchema } from "../modules/auth/auth.schema";
 
 const seedEnv = z
   .object({

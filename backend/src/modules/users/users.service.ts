@@ -1,6 +1,6 @@
 import { count, desc, eq, getTableColumns } from "drizzle-orm";
-import { db } from "../../db/index.js";
-import { notes, users } from "../../db/schema.js";
+import { db } from "../../db/index";
+import { notes, users } from "../../db/schema";
 
 const { passwordHash: _passwordHash, ...publicUserColumns } = getTableColumns(users);
 
