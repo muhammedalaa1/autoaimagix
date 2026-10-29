@@ -1,4 +1,4 @@
-import type { Role } from "../db/schema.js";
+import type { Role } from "../db/schema";
 
 export interface AuthUser {
   id: string;

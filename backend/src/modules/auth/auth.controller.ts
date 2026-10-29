@@ -1,9 +1,9 @@
 import type { Request, Response } from "express";
-import { getAuthUser } from "../../middlewares/authenticate.js";
-import { clearAuthCookie, setAuthCookie } from "../../utils/auth-cookie.js";
-import { signAccessToken } from "../../utils/jwt.js";
-import { loginSchema, registerSchema } from "./auth.schema.js";
-import * as authService from "./auth.service.js";
+import { getAuthUser } from "../../middlewares/authenticate";
+import { clearAuthCookie, setAuthCookie } from "../../utils/auth-cookie";
+import { signAccessToken } from "../../utils/jwt";
+import { loginSchema, registerSchema } from "./auth.schema";
+import * as authService from "./auth.service";
 
 export async function register(req: Request, res: Response) {
   const input = registerSchema.parse(req.body);

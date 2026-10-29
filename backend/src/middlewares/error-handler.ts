@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { ZodError } from "zod";
-import { isProduction } from "../config/env.js";
-import { AppError } from "../utils/app-error.js";
+import { isProduction } from "../config/env";
+import { AppError } from "../utils/app-error";
 
 interface ErrorBody {
   error: { code: string; message: string; details?: unknown };

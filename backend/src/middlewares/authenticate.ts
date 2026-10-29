@@ -1,10 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
 import { eq } from "drizzle-orm";
-import { db } from "../db/index.js";
-import { users } from "../db/schema.js";
-import { AppError } from "../utils/app-error.js";
-import { AUTH_COOKIE_NAME, clearAuthCookie } from "../utils/auth-cookie.js";
-import { verifyAccessToken } from "../utils/jwt.js";
+import { db } from "../db/index";
+import { users } from "../db/schema";
+import { AppError } from "../utils/app-error";
+import { AUTH_COOKIE_NAME, clearAuthCookie } from "../utils/auth-cookie";
+import { verifyAccessToken } from "../utils/jwt";
 
 /**
  * Reads the JWT from the httpOnly cookie and loads the user from the DB.

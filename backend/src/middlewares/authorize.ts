@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import type { Role } from "../db/schema.js";
-import { AppError } from "../utils/app-error.js";
+import type { Role } from "../db/schema";
+import { AppError } from "../utils/app-error";
 
 /** Must run after `authenticate`. Allows the request only for the given roles. */
 export function authorize(...allowed: Role[]) {

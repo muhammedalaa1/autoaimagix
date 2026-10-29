@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import { env } from "../config/env.js";
-import { AppError } from "../utils/app-error.js";
+import { env } from "../config/env";
+import { AppError } from "../utils/app-error";
 
 const SAFE_METHODS = new Set(["GET", "HEAD", "OPTIONS"]);
 
