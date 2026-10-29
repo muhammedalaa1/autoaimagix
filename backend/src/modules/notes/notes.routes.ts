@@ -1,0 +1,13 @@
+import { Router } from "express";
+import { authenticate } from "../../middlewares/authenticate.js";
+import * as notesController from "./notes.controller.js";
+
+export const notesRouter = Router();
+
+notesRouter.use(authenticate);
+
+notesRouter.get("/", notesController.list);
+notesRouter.post("/", notesController.create);
+notesRouter.get("/:id", notesController.getById);
+notesRouter.patch("/:id", notesController.update);
+notesRouter.delete("/:id", notesController.remove);

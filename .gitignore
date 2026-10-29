@@ -1,0 +1,12 @@
+# Task brief (not part of the codebase)
+*.docx
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies / build output
+node_modules/
+dist/
+.next/
