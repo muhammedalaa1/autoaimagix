@@ -15,7 +15,7 @@
     "db:seed": "tsx src/db/seed.ts"
   },
   "license": "ISC",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@neondatabase/serverless": "^1.2.0",
     "bcryptjs": "^3.0.3",
